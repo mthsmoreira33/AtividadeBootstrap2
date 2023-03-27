@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINK PARA O CSS DO BS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <!-- MEU CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <p>Modal Bootstrap</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAtividade1">Clique aqui</a>
+            </div>
+
+            <div class="col-6">
+                <p>Accordion Bootstrap</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAtividade2">Clique aqui</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-5">
+            <section id="list-contacts">
+            </section>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+
+    <div class="modal" tabindex="-1" id="modalAtividade1">
+        <div class="modal-dialog">
+            <div class="modal-content border border-dark-subtle border-5">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirma exclusão dos dados?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ao apagar os dados, os mesmos serão excluídos do sistema.</p>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary botaoYes" id="liveToastBtn" data-bs-dismiss="modal">Sim</button>
+                    <button type="button" class="btn btn-danger botaoNao" id="liveToastBtn1" data-bs-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="modalAtividade2">
+        <div class="modal-dialog">
+            <div class="modal-content border border-dark-subtle border-5">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tarefas do Dia!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form class="p-2" id="formAtividade2">
+                    <div class="mb-3">
+                        <label for="nomeAtividade" class="form-label">Nome da atividade:</label>
+                        <input type="text" class="form-control" id="nomeAtividade" aria-describedby="nomeAtividade">
+                        <div id="nomeAtividade" class="form-text">Informe o nome da atividade que irá fazer.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descricaoAtividade" class="form-label">Descreva a atividade:</label>
+                        <input type="text" class="form-control" id="descricaoAtividade" aria-describedby="descricaoAtividade">
+                        <div id="descricaoAtividade" class="form-text">Descreva como e quando irá realizar a atividade.</div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Salvar Tarefa</button>
+                        <button type=" button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERTA EM FORMA DE TOASTS -->
+
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-bootstrap-fill"></i>
+                <strong class="me-auto ms-2">ALERTA!</strong>
+
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-light">
+                Exclusão dos dados confirmada!
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3 ">
+        <div id="liveToast1" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-bootstrap-fill"></i>
+                <strong class="me-auto ms-2">ALERTA!</strong>
+
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-light ">
+                Exclusão dos dados NÃO confirmada!
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- JS DO BS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+    <!-- MEU JS-->
+    <script src="index.js"></script>
+</body>
+
+</html>
